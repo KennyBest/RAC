@@ -9,13 +9,21 @@
 #import "ViewController.h"
 #import "ReactiveObjC.h"
 #import "TestSignalViewModel.h"
+#import "RWTFlickrSearchViewController.h"
+#import "FlickrSearchViewModel.h"
+#import "ViewModelServicesImpl.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet TestSignalView *signalView;
+@property (weak, nonatomic) IBOutlet UIButton *mvvmButton;
 
 @property (strong, nonatomic) RACSignal *showAlertSignal;
 
 @property (strong, nonatomic) TestSignalViewModel *viewModel;
+
+@property (strong, nonatomic) FlickrSearchViewModel *searchViewModel;
+@property (strong, nonatomic) ViewModelServicesImpl *viewModelServices;
+
 @end
 
 @implementation ViewController
@@ -52,7 +60,21 @@
     
 //    [self testBindSignal];
 //    [self test];
-    [self testSubject];
+//    [self testSubject];
+    
+//    [self testRACCommand];
+    
+    [self testDeepRAC];
+    RACSignal *goSingle = [self.mvvmButton rac_signalForControlEvents:UIControlEventTouchUpInside];
+    self.viewModelServices = [[ViewModelServicesImpl alloc] init];
+    self.searchViewModel = [[FlickrSearchViewModel alloc] initWithServices:self.viewModelServices];
+   
+    @weakify(self);
+    [goSingle subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        RWTFlickrSearchViewController *vc = [[RWTFlickrSearchViewController alloc] initWithViewModel:self.searchViewModel];
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
 }
 
 
@@ -218,15 +240,83 @@
     [subject sendNext:@"Hello World, know subject"];
 }
 
-
-
 - (void)test {
     NSArray *array = @[];
     CGFloat tmp = 3 / array.count;
     NSLog(@"---------> %f", tmp);
 }
 
+- (void)testRACCommand {
+    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(NSNumber*  _Nullable input) {
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            NSInteger count = [input integerValue];
+            for (NSInteger i = 0; i < count; i++) {
+                [subscriber sendNext:@"Hello World"];
+            }
+            return nil;
+        }];
+    }];
+    
+    [[command.executionSignals switchToLatest] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"------>%@", x);
+    }];
+    
+    sleep(2);
+    
+    [command execute:@(2)];
+}
 
+- (void)testDeepRAC {
+    /**
+     basic opertaion:
+     empty
+     bind -- 对原信号解包，按照新规则重新组包成一个新信号
+     return
+     zipWith
+     concat
+     */
+    RACSignal *returnSignal = [RACSignal return:@(3)];
+    [returnSignal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@", x);
+    }];
+    
+    RACSignal *sampleSignal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendNext:@"Hello"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    /**
+     typedef RACSignal * _Nullable (^RACSignalBindBlock)(ValueType _Nullable value, BOOL *stop);
+     - (RACSignal *)bind:(RACSignalBindBlock (^)(void))block RAC_WARN_UNUSED_RESULT;
+     */
+    //
+    RACSignal *bindSignal = [sampleSignal bind:^RACSignalBindBlock _Nonnull{
+        return ^(NSString *value, BOOL *stop){
+            return [RACSignal return:[value stringByAppendingString:@" KennyBest"]];
+        };
+    }];
+    
+    [sampleSignal subscribeNext:^(NSString*  _Nullable x) {
+        NSLog(@"%@", x);
+    }];
+    [bindSignal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@", x);
+    }];
+    
+    RACSignal *secondSignal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendNext:@"concat second signal"];
+        [subscriber sendCompleted];
+        return [RACDisposable disposableWithBlock:^{
+            
+        }];
+    }];
+    
+    RACSignal *concatSignal = [sampleSignal concat:secondSignal];
+    [concatSignal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"concat----->%@", x);
+    }];
+}
 
 
 @end

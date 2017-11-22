@@ -15,6 +15,28 @@
 		843E181C1FBA8CD1001AB941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843E181A1FBA8CD1001AB941 /* LaunchScreen.storyboard */; };
 		843E181F1FBA8CD1001AB941 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E181E1FBA8CD1001AB941 /* main.m */; };
 		843E18291FBA8CD1001AB941 /* ReactiveObjcDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E18281FBA8CD1001AB941 /* ReactiveObjcDemoTests.m */; };
+		846D35D91FC50DDB00EC5F30 /* BXGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35B81FC50DDB00EC5F30 /* BXGoods.m */; };
+		846D35DA1FC50DDB00EC5F30 /* BXGoodsSearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35BA1FC50DDB00EC5F30 /* BXGoodsSearchResults.m */; };
+		846D35DB1FC50DDB00EC5F30 /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35BC1FC50DDB00EC5F30 /* FlickrPhoto.m */; };
+		846D35DC1FC50DDB00EC5F30 /* FlickrSearchImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35BF1FC50DDB00EC5F30 /* FlickrSearchImpl.m */; };
+		846D35DD1FC50DDB00EC5F30 /* FlickrSearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35C11FC50DDB00EC5F30 /* FlickrSearchResults.m */; };
+		846D35DE1FC50DDB00EC5F30 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 846D35C31FC50DDB00EC5F30 /* comment.png */; };
+		846D35DF1FC50DDB00EC5F30 /* fave.png in Resources */ = {isa = PBXBuildFile; fileRef = 846D35C41FC50DDB00EC5F30 /* fave.png */; };
+		846D35E01FC50DDB00EC5F30 /* RWTFlickrSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35C61FC50DDB00EC5F30 /* RWTFlickrSearchViewController.m */; };
+		846D35E11FC50DDB00EC5F30 /* RWTFlickrSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846D35C71FC50DDB00EC5F30 /* RWTFlickrSearchViewController.xib */; };
+		846D35E21FC50DDB00EC5F30 /* RWTRecentSearchItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35C91FC50DDB00EC5F30 /* RWTRecentSearchItemTableViewCell.m */; };
+		846D35E31FC50DDB00EC5F30 /* RWTRecentSearchItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846D35CA1FC50DDB00EC5F30 /* RWTRecentSearchItemTableViewCell.xib */; };
+		846D35E41FC50DDB00EC5F30 /* RWTSearchResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35CC1FC50DDB00EC5F30 /* RWTSearchResultsTableViewCell.m */; };
+		846D35E51FC50DDB00EC5F30 /* RWTSearchResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846D35CD1FC50DDB00EC5F30 /* RWTSearchResultsTableViewCell.xib */; };
+		846D35E61FC50DDB00EC5F30 /* RWTSearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35CF1FC50DDB00EC5F30 /* RWTSearchResultsViewController.m */; };
+		846D35E71FC50DDB00EC5F30 /* RWTSearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846D35D01FC50DDB00EC5F30 /* RWTSearchResultsViewController.xib */; };
+		846D35E81FC50DDB00EC5F30 /* FlickrSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35D31FC50DDB00EC5F30 /* FlickrSearchViewModel.m */; };
+		846D35E91FC50DDB00EC5F30 /* SearchResultViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35D51FC50DDB00EC5F30 /* SearchResultViewModel.m */; };
+		846D35EA1FC50DDB00EC5F30 /* ViewModelServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35D81FC50DDB00EC5F30 /* ViewModelServicesImpl.m */; };
+		846D35EE1FC50E8E00EC5F30 /* RACLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35ED1FC50E8E00EC5F30 /* RACLoginViewController.m */; };
+		846D35F11FC5114B00EC5F30 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35F01FC5114B00EC5F30 /* LoginViewModel.m */; };
+		846D35F41FC5115800EC5F30 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35F31FC5115800EC5F30 /* LoginModel.m */; };
+		846D35F81FC541E600EC5F30 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35F71FC541E500EC5F30 /* NSString+Util.m */; };
 		84ACE13C1FBC095E0044CEE8 /* TestSignalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACE13B1FBC095E0044CEE8 /* TestSignalView.m */; };
 		84ACE13F1FBC09B60044CEE8 /* TestSignalViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACE13E1FBC09B60044CEE8 /* TestSignalViewModel.m */; };
 		84E4259C1FBEA004001D7E57 /* Test01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E4259B1FBEA004001D7E57 /* Test01ViewController.m */; };
@@ -46,6 +68,47 @@
 		843E18241FBA8CD1001AB941 /* ReactiveObjcDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveObjcDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		843E18281FBA8CD1001AB941 /* ReactiveObjcDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactiveObjcDemoTests.m; sourceTree = "<group>"; };
 		843E182A1FBA8CD1001AB941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846D35B71FC50DDB00EC5F30 /* BXGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXGoods.h; sourceTree = "<group>"; };
+		846D35B81FC50DDB00EC5F30 /* BXGoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXGoods.m; sourceTree = "<group>"; };
+		846D35B91FC50DDB00EC5F30 /* BXGoodsSearchResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXGoodsSearchResults.h; sourceTree = "<group>"; };
+		846D35BA1FC50DDB00EC5F30 /* BXGoodsSearchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXGoodsSearchResults.m; sourceTree = "<group>"; };
+		846D35BB1FC50DDB00EC5F30 /* FlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhoto.h; sourceTree = "<group>"; };
+		846D35BC1FC50DDB00EC5F30 /* FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhoto.m; sourceTree = "<group>"; };
+		846D35BD1FC50DDB00EC5F30 /* FlickrSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrSearch.h; sourceTree = "<group>"; };
+		846D35BE1FC50DDB00EC5F30 /* FlickrSearchImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrSearchImpl.h; sourceTree = "<group>"; };
+		846D35BF1FC50DDB00EC5F30 /* FlickrSearchImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrSearchImpl.m; sourceTree = "<group>"; };
+		846D35C01FC50DDB00EC5F30 /* FlickrSearchResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrSearchResults.h; sourceTree = "<group>"; };
+		846D35C11FC50DDB00EC5F30 /* FlickrSearchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrSearchResults.m; sourceTree = "<group>"; };
+		846D35C31FC50DDB00EC5F30 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
+		846D35C41FC50DDB00EC5F30 /* fave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fave.png; sourceTree = "<group>"; };
+		846D35C51FC50DDB00EC5F30 /* RWTFlickrSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTFlickrSearchViewController.h; sourceTree = "<group>"; };
+		846D35C61FC50DDB00EC5F30 /* RWTFlickrSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTFlickrSearchViewController.m; sourceTree = "<group>"; };
+		846D35C71FC50DDB00EC5F30 /* RWTFlickrSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RWTFlickrSearchViewController.xib; sourceTree = "<group>"; };
+		846D35C81FC50DDB00EC5F30 /* RWTRecentSearchItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTRecentSearchItemTableViewCell.h; sourceTree = "<group>"; };
+		846D35C91FC50DDB00EC5F30 /* RWTRecentSearchItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTRecentSearchItemTableViewCell.m; sourceTree = "<group>"; };
+		846D35CA1FC50DDB00EC5F30 /* RWTRecentSearchItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RWTRecentSearchItemTableViewCell.xib; sourceTree = "<group>"; };
+		846D35CB1FC50DDB00EC5F30 /* RWTSearchResultsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTSearchResultsTableViewCell.h; sourceTree = "<group>"; };
+		846D35CC1FC50DDB00EC5F30 /* RWTSearchResultsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTSearchResultsTableViewCell.m; sourceTree = "<group>"; };
+		846D35CD1FC50DDB00EC5F30 /* RWTSearchResultsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RWTSearchResultsTableViewCell.xib; sourceTree = "<group>"; };
+		846D35CE1FC50DDB00EC5F30 /* RWTSearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTSearchResultsViewController.h; sourceTree = "<group>"; };
+		846D35CF1FC50DDB00EC5F30 /* RWTSearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTSearchResultsViewController.m; sourceTree = "<group>"; };
+		846D35D01FC50DDB00EC5F30 /* RWTSearchResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RWTSearchResultsViewController.xib; sourceTree = "<group>"; };
+		846D35D21FC50DDB00EC5F30 /* FlickrSearchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrSearchViewModel.h; sourceTree = "<group>"; };
+		846D35D31FC50DDB00EC5F30 /* FlickrSearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrSearchViewModel.m; sourceTree = "<group>"; };
+		846D35D41FC50DDB00EC5F30 /* SearchResultViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewModel.h; sourceTree = "<group>"; };
+		846D35D51FC50DDB00EC5F30 /* SearchResultViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewModel.m; sourceTree = "<group>"; };
+		846D35D61FC50DDB00EC5F30 /* ViewModelServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModelServices.h; sourceTree = "<group>"; };
+		846D35D71FC50DDB00EC5F30 /* ViewModelServicesImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModelServicesImpl.h; sourceTree = "<group>"; };
+		846D35D81FC50DDB00EC5F30 /* ViewModelServicesImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModelServicesImpl.m; sourceTree = "<group>"; };
+		846D35EC1FC50E8E00EC5F30 /* RACLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACLoginViewController.h; sourceTree = "<group>"; };
+		846D35ED1FC50E8E00EC5F30 /* RACLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACLoginViewController.m; sourceTree = "<group>"; };
+		846D35EF1FC5114B00EC5F30 /* LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
+		846D35F01FC5114B00EC5F30 /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+		846D35F21FC5115800EC5F30 /* LoginModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		846D35F31FC5115800EC5F30 /* LoginModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		846D35F61FC541E500EC5F30 /* NSString+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
+		846D35F71FC541E500EC5F30 /* NSString+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Util.m"; sourceTree = "<group>"; };
+		847203051FC275CE003EFF16 /* ReactiveObjcDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveObjcDemo.pch; sourceTree = "<group>"; };
 		84ACE13A1FBC095E0044CEE8 /* TestSignalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSignalView.h; sourceTree = "<group>"; };
 		84ACE13B1FBC095E0044CEE8 /* TestSignalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSignalView.m; sourceTree = "<group>"; };
 		84ACE13D1FBC09B60044CEE8 /* TestSignalViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSignalViewModel.h; sourceTree = "<group>"; };
@@ -117,6 +180,10 @@
 		843E180E1FBA8CD1001AB941 /* ReactiveObjcDemo */ = {
 			isa = PBXGroup;
 			children = (
+				846D35F51FC541BA00EC5F30 /* Utils */,
+				846D35EB1FC50E0D00EC5F30 /* ViewModel */,
+				846D35B41FC50DDB00EC5F30 /* Model */,
+				846D35B51FC50DDB00EC5F30 /* MVVM */,
 				843E180F1FBA8CD1001AB941 /* AppDelegate.h */,
 				843E18101FBA8CD1001AB941 /* AppDelegate.m */,
 				843E18121FBA8CD1001AB941 /* ViewController.h */,
@@ -125,6 +192,8 @@
 				84E4259B1FBEA004001D7E57 /* Test01ViewController.m */,
 				84E4259D1FBECAD0001D7E57 /* Test02ViewController.h */,
 				84E4259E1FBECAD0001D7E57 /* Test02ViewController.m */,
+				846D35EC1FC50E8E00EC5F30 /* RACLoginViewController.h */,
+				846D35ED1FC50E8E00EC5F30 /* RACLoginViewController.m */,
 				84ACE13A1FBC095E0044CEE8 /* TestSignalView.h */,
 				84ACE13B1FBC095E0044CEE8 /* TestSignalView.m */,
 				84ACE13D1FBC09B60044CEE8 /* TestSignalViewModel.h */,
@@ -134,6 +203,7 @@
 				843E181A1FBA8CD1001AB941 /* LaunchScreen.storyboard */,
 				843E181D1FBA8CD1001AB941 /* Info.plist */,
 				843E181E1FBA8CD1001AB941 /* main.m */,
+				847203051FC275CE003EFF16 /* ReactiveObjcDemo.pch */,
 			);
 			path = ReactiveObjcDemo;
 			sourceTree = "<group>";
@@ -145,6 +215,96 @@
 				843E182A1FBA8CD1001AB941 /* Info.plist */,
 			);
 			path = ReactiveObjcDemoTests;
+			sourceTree = "<group>";
+		};
+		846D35B41FC50DDB00EC5F30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				846D35F21FC5115800EC5F30 /* LoginModel.h */,
+				846D35F31FC5115800EC5F30 /* LoginModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		846D35B51FC50DDB00EC5F30 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				846D35B61FC50DDB00EC5F30 /* Model */,
+				846D35C21FC50DDB00EC5F30 /* View */,
+				846D35D11FC50DDB00EC5F30 /* ViewModel */,
+				846D35D71FC50DDB00EC5F30 /* ViewModelServicesImpl.h */,
+				846D35D81FC50DDB00EC5F30 /* ViewModelServicesImpl.m */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		846D35B61FC50DDB00EC5F30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				846D35B71FC50DDB00EC5F30 /* BXGoods.h */,
+				846D35B81FC50DDB00EC5F30 /* BXGoods.m */,
+				846D35B91FC50DDB00EC5F30 /* BXGoodsSearchResults.h */,
+				846D35BA1FC50DDB00EC5F30 /* BXGoodsSearchResults.m */,
+				846D35BB1FC50DDB00EC5F30 /* FlickrPhoto.h */,
+				846D35BC1FC50DDB00EC5F30 /* FlickrPhoto.m */,
+				846D35BD1FC50DDB00EC5F30 /* FlickrSearch.h */,
+				846D35BE1FC50DDB00EC5F30 /* FlickrSearchImpl.h */,
+				846D35BF1FC50DDB00EC5F30 /* FlickrSearchImpl.m */,
+				846D35C01FC50DDB00EC5F30 /* FlickrSearchResults.h */,
+				846D35C11FC50DDB00EC5F30 /* FlickrSearchResults.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		846D35C21FC50DDB00EC5F30 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				846D35C31FC50DDB00EC5F30 /* comment.png */,
+				846D35C41FC50DDB00EC5F30 /* fave.png */,
+				846D35C51FC50DDB00EC5F30 /* RWTFlickrSearchViewController.h */,
+				846D35C61FC50DDB00EC5F30 /* RWTFlickrSearchViewController.m */,
+				846D35C71FC50DDB00EC5F30 /* RWTFlickrSearchViewController.xib */,
+				846D35C81FC50DDB00EC5F30 /* RWTRecentSearchItemTableViewCell.h */,
+				846D35C91FC50DDB00EC5F30 /* RWTRecentSearchItemTableViewCell.m */,
+				846D35CA1FC50DDB00EC5F30 /* RWTRecentSearchItemTableViewCell.xib */,
+				846D35CB1FC50DDB00EC5F30 /* RWTSearchResultsTableViewCell.h */,
+				846D35CC1FC50DDB00EC5F30 /* RWTSearchResultsTableViewCell.m */,
+				846D35CD1FC50DDB00EC5F30 /* RWTSearchResultsTableViewCell.xib */,
+				846D35CE1FC50DDB00EC5F30 /* RWTSearchResultsViewController.h */,
+				846D35CF1FC50DDB00EC5F30 /* RWTSearchResultsViewController.m */,
+				846D35D01FC50DDB00EC5F30 /* RWTSearchResultsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		846D35D11FC50DDB00EC5F30 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				846D35D21FC50DDB00EC5F30 /* FlickrSearchViewModel.h */,
+				846D35D31FC50DDB00EC5F30 /* FlickrSearchViewModel.m */,
+				846D35D41FC50DDB00EC5F30 /* SearchResultViewModel.h */,
+				846D35D51FC50DDB00EC5F30 /* SearchResultViewModel.m */,
+				846D35D61FC50DDB00EC5F30 /* ViewModelServices.h */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		846D35EB1FC50E0D00EC5F30 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				846D35EF1FC5114B00EC5F30 /* LoginViewModel.h */,
+				846D35F01FC5114B00EC5F30 /* LoginViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		846D35F51FC541BA00EC5F30 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				846D35F61FC541E500EC5F30 /* NSString+Util.h */,
+				846D35F71FC541E500EC5F30 /* NSString+Util.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +392,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846D35DF1FC50DDB00EC5F30 /* fave.png in Resources */,
 				843E181C1FBA8CD1001AB941 /* LaunchScreen.storyboard in Resources */,
+				846D35E71FC50DDB00EC5F30 /* RWTSearchResultsViewController.xib in Resources */,
 				843E18191FBA8CD1001AB941 /* Assets.xcassets in Resources */,
+				846D35E31FC50DDB00EC5F30 /* RWTRecentSearchItemTableViewCell.xib in Resources */,
+				846D35DE1FC50DDB00EC5F30 /* comment.png in Resources */,
+				846D35E51FC50DDB00EC5F30 /* RWTSearchResultsTableViewCell.xib in Resources */,
+				846D35E11FC50DDB00EC5F30 /* RWTFlickrSearchViewController.xib in Resources */,
 				843E18171FBA8CD1001AB941 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,9 +453,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveObjcDemo/Pods-ReactiveObjcDemo-resources.sh",
+				"${PODS_ROOT}/objectiveflickr/BridgeSupport",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -304,10 +473,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ACE13C1FBC095E0044CEE8 /* TestSignalView.m in Sources */,
+				846D35E61FC50DDB00EC5F30 /* RWTSearchResultsViewController.m in Sources */,
+				846D35E91FC50DDB00EC5F30 /* SearchResultViewModel.m in Sources */,
+				846D35F41FC5115800EC5F30 /* LoginModel.m in Sources */,
+				846D35DC1FC50DDB00EC5F30 /* FlickrSearchImpl.m in Sources */,
 				84E4259F1FBECAD0001D7E57 /* Test02ViewController.m in Sources */,
+				846D35EE1FC50E8E00EC5F30 /* RACLoginViewController.m in Sources */,
+				846D35DB1FC50DDB00EC5F30 /* FlickrPhoto.m in Sources */,
+				846D35F81FC541E600EC5F30 /* NSString+Util.m in Sources */,
+				846D35DD1FC50DDB00EC5F30 /* FlickrSearchResults.m in Sources */,
+				846D35D91FC50DDB00EC5F30 /* BXGoods.m in Sources */,
 				843E18141FBA8CD1001AB941 /* ViewController.m in Sources */,
+				846D35E41FC50DDB00EC5F30 /* RWTSearchResultsTableViewCell.m in Sources */,
+				846D35F11FC5114B00EC5F30 /* LoginViewModel.m in Sources */,
+				846D35E81FC50DDB00EC5F30 /* FlickrSearchViewModel.m in Sources */,
+				846D35E01FC50DDB00EC5F30 /* RWTFlickrSearchViewController.m in Sources */,
 				843E181F1FBA8CD1001AB941 /* main.m in Sources */,
+				846D35E21FC50DDB00EC5F30 /* RWTRecentSearchItemTableViewCell.m in Sources */,
+				846D35EA1FC50DDB00EC5F30 /* ViewModelServicesImpl.m in Sources */,
 				84ACE13F1FBC09B60044CEE8 /* TestSignalViewModel.m in Sources */,
+				846D35DA1FC50DDB00EC5F30 /* BXGoodsSearchResults.m in Sources */,
 				843E18111FBA8CD1001AB941 /* AppDelegate.m in Sources */,
 				84E4259C1FBEA004001D7E57 /* Test01ViewController.m in Sources */,
 			);

@@ -42,6 +42,7 @@
  *
  * See #strongify for an example of usage.
  */
+
 #define weakify(...) \
     rac_keywordify \
     metamacro_foreach_cxt(rac_weakify_,, __weak, __VA_ARGS__)
@@ -80,6 +81,7 @@
 
  * @endcode
  */
+
 #define strongify(...) \
     rac_keywordify \
     _Pragma("clang diagnostic push") \
