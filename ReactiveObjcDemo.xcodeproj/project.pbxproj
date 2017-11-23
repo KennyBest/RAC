@@ -15,6 +15,7 @@
 		843E181C1FBA8CD1001AB941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843E181A1FBA8CD1001AB941 /* LaunchScreen.storyboard */; };
 		843E181F1FBA8CD1001AB941 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E181E1FBA8CD1001AB941 /* main.m */; };
 		843E18291FBA8CD1001AB941 /* ReactiveObjcDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E18281FBA8CD1001AB941 /* ReactiveObjcDemoTests.m */; };
+		845F62191FC6BEA00075EDC1 /* ProtocolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 845F62181FC6BEA00075EDC1 /* ProtocolView.m */; };
 		846D35D91FC50DDB00EC5F30 /* BXGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35B81FC50DDB00EC5F30 /* BXGoods.m */; };
 		846D35DA1FC50DDB00EC5F30 /* BXGoodsSearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35BA1FC50DDB00EC5F30 /* BXGoodsSearchResults.m */; };
 		846D35DB1FC50DDB00EC5F30 /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D35BC1FC50DDB00EC5F30 /* FlickrPhoto.m */; };
@@ -68,6 +69,8 @@
 		843E18241FBA8CD1001AB941 /* ReactiveObjcDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveObjcDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		843E18281FBA8CD1001AB941 /* ReactiveObjcDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactiveObjcDemoTests.m; sourceTree = "<group>"; };
 		843E182A1FBA8CD1001AB941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845F62171FC6BEA00075EDC1 /* ProtocolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtocolView.h; sourceTree = "<group>"; };
+		845F62181FC6BEA00075EDC1 /* ProtocolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtocolView.m; sourceTree = "<group>"; };
 		846D35B71FC50DDB00EC5F30 /* BXGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXGoods.h; sourceTree = "<group>"; };
 		846D35B81FC50DDB00EC5F30 /* BXGoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXGoods.m; sourceTree = "<group>"; };
 		846D35B91FC50DDB00EC5F30 /* BXGoodsSearchResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXGoodsSearchResults.h; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				843E18101FBA8CD1001AB941 /* AppDelegate.m */,
 				843E18121FBA8CD1001AB941 /* ViewController.h */,
 				843E18131FBA8CD1001AB941 /* ViewController.m */,
+				845F62171FC6BEA00075EDC1 /* ProtocolView.h */,
+				845F62181FC6BEA00075EDC1 /* ProtocolView.m */,
 				84E4259A1FBEA004001D7E57 /* Test01ViewController.h */,
 				84E4259B1FBEA004001D7E57 /* Test01ViewController.m */,
 				84E4259D1FBECAD0001D7E57 /* Test02ViewController.h */,
@@ -494,6 +499,7 @@
 				84ACE13F1FBC09B60044CEE8 /* TestSignalViewModel.m in Sources */,
 				846D35DA1FC50DDB00EC5F30 /* BXGoodsSearchResults.m in Sources */,
 				843E18111FBA8CD1001AB941 /* AppDelegate.m in Sources */,
+				845F62191FC6BEA00075EDC1 /* ProtocolView.m in Sources */,
 				84E4259C1FBEA004001D7E57 /* Test01ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

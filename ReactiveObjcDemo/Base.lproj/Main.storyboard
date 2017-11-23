@@ -18,8 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hET-6Q-Rq1">
+                                <rect key="frame" x="12" y="82" width="161" height="30"/>
+                                <state key="normal" title="rac_signalFromSelector"/>
+                                <connections>
+                                    <action selector="testRac_SignalFromSelector:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LgH-jI-sPy"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV9-tW-1lx">
-                                <rect key="frame" x="171" y="82" width="33" height="30"/>
+                                <rect key="frame" x="183" y="82" width="33" height="30"/>
                                 <state key="normal" title="test1"/>
                                 <connections>
                                     <action selector="testBasicSignalOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rfm-Ix-o06"/>
@@ -75,13 +82,15 @@
                             <constraint firstItem="SeU-GX-QQI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="5FH-aM-aS6"/>
                             <constraint firstItem="gg1-hU-pMP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A9I-P2-bZu"/>
                             <constraint firstItem="ts4-8x-Xxo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hal-yy-faW"/>
+                            <constraint firstItem="hET-6Q-Rq1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="LV3-Uz-S9h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SeU-GX-QQI" secondAttribute="trailing" constant="68" id="PeJ-Do-E2c"/>
                             <constraint firstItem="Sa4-uJ-iaF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QmH-4V-h1S"/>
                             <constraint firstItem="Ldd-8l-3K7" firstAttribute="top" secondItem="gg1-hU-pMP" secondAttribute="bottom" constant="8" id="Rw0-BJ-wvq"/>
                             <constraint firstItem="Sa4-uJ-iaF" firstAttribute="top" secondItem="dtA-YY-VC3" secondAttribute="bottom" constant="52" id="Scl-bT-045"/>
+                            <constraint firstItem="QV9-tW-1lx" firstAttribute="leading" secondItem="hET-6Q-Rq1" secondAttribute="trailing" constant="10" id="X2l-WQ-bR5"/>
                             <constraint firstItem="SeU-GX-QQI" firstAttribute="top" secondItem="QV9-tW-1lx" secondAttribute="bottom" constant="23" id="X2n-rf-gXd"/>
                             <constraint firstItem="ts4-8x-Xxo" firstAttribute="top" secondItem="Ldd-8l-3K7" secondAttribute="bottom" constant="8" id="ZmZ-5J-4RK"/>
-                            <constraint firstItem="QV9-tW-1lx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ike-i5-4KE"/>
+                            <constraint firstItem="hET-6Q-Rq1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="eIU-sO-BVF"/>
                             <constraint firstItem="QV9-tW-1lx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="oJS-oc-uNh"/>
                             <constraint firstItem="Ldd-8l-3K7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wbZ-H7-JbY"/>
                             <constraint firstItem="dtA-YY-VC3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xPg-dH-Rw8"/>

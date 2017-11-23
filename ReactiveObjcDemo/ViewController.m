@@ -12,8 +12,9 @@
 #import "RWTFlickrSearchViewController.h"
 #import "FlickrSearchViewModel.h"
 #import "ViewModelServicesImpl.h"
+#import "ProtocolView.h"
 
-@interface ViewController ()
+@interface ViewController () <ProtocolViewDelegate>
 @property (weak, nonatomic) IBOutlet TestSignalView *signalView;
 @property (weak, nonatomic) IBOutlet UIButton *mvvmButton;
 
@@ -23,6 +24,8 @@
 
 @property (strong, nonatomic) FlickrSearchViewModel *searchViewModel;
 @property (strong, nonatomic) ViewModelServicesImpl *viewModelServices;
+
+@property (strong, nonatomic) ProtocolView *protocolView;
 
 @end
 
@@ -50,6 +53,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [self addProtocolView];
+    
     self.viewModel.view = self.signalView;
 //    [self testRAC];
 //    [self testTransformingStreams];
@@ -75,12 +80,34 @@
         RWTFlickrSearchViewController *vc = [[RWTFlickrSearchViewController alloc] initWithViewModel:self.searchViewModel];
         [self.navigationController pushViewController:vc animated:YES];
     }];
+    
+    // -rac_signalForSelector: 监听方法被执行，创建可以发出带有这个方法全部参数的信号，方法被执行，则执行-sendNext:
+    [[self rac_signalForSelector:@selector(testSignalSelector:param:)]
+     subscribeNext:^(id  _Nullable x) {
+         NSLog(@"rac_signalForSelector---->%@", x);
+     }];
+    [[self rac_signalForSelector:@selector(protocolView:info:) fromProtocol:@protocol(ProtocolViewDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
+        NSLog(@"rac_signalForSelector: fromProtocol:--->%@", x);
+    }];
 }
 
+- (IBAction)testRac_SignalFromSelector:(id)sender {
+    [self testSignalSelector:@"Hello" param:@"World"];
+}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)testSignalSelector:(NSString *)str1 param:(NSString *)str2 {
+    
+}
+
+- (void)addProtocolView {
+    ProtocolView *view = [[ProtocolView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame) - 70, 100, 50)];
+    [self.view addSubview:view];
+    self.protocolView = view;
+    view.delegate = self;
+}
+
+- (void)protocolView:(ProtocolView *)view info:(NSString *)info {
+    NSLog(@"-------->*********");
 }
 
 - (IBAction)testBasicSignalOperation:(id)sender {
@@ -298,12 +325,12 @@
     }];
     
     [sampleSignal subscribeNext:^(NSString*  _Nullable x) {
-        NSLog(@"%@", x);
+        NSLog(@"sample---->%@", x);
     }];
     [bindSignal subscribeNext:^(id  _Nullable x) {
-        NSLog(@"%@", x);
+        NSLog(@"bind--->%@", x);
     }];
-    
+  
     RACSignal *secondSignal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         [subscriber sendNext:@"concat second signal"];
         [subscriber sendCompleted];
@@ -312,11 +339,80 @@
         }];
     }];
     
+    // concat
     RACSignal *concatSignal = [sampleSignal concat:secondSignal];
     [concatSignal subscribeNext:^(id  _Nullable x) {
         NSLog(@"concat----->%@", x);
     }];
+    
+    // operation
+    
+    
+    // -- flattenMap:  内部执行bind操作
+    RACSignal *flattenMapSignal = [sampleSignal flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+        NSLog(@"flattenMap block value--->%@", value);
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            [subscriber sendNext:@"flattenMap --> new signal"];
+            [subscriber sendCompleted];
+            return nil;
+        }];
+    }];
+    
+    [flattenMapSignal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribe flattenMapSignal next event --->%@", x);
+    }];
+    
+    // map 就是转换 将一个信号源的信号值转变为另一个形式 -- 内部执行flattenMap 快捷操作
+    RACSignal *mapSignal = [sampleSignal map:^id _Nullable(id  _Nullable value) {
+        return @([value length] > 3);
+    }];
+    [mapSignal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribe map signal -->%@", x);
+    }];
+    
+    // reduceEach
+    RACSignal *tupleSignal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        RACTuple *tuple = [RACTuple tupleWithObjects:@"1", @"2", @"3", @"4", nil];
+        [subscriber sendNext:tuple];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    RACSignal *reduceEachSignal = [tupleSignal reduceEach:^id _Nullable (NSString *str1, NSString *str2, NSString *str3, NSString *str4) {
+        return [NSString stringWithFormat:@"%@-%@-%@-%@", str1, str2, str3, str4];
+    }];
+    [reduceEachSignal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribe reduceEachSignal -- %@", x);
+    }];
+    
+    //zip --> 将多个信号合成一个元组
+    RACSignal *zipSignal = [RACSignal zip:@[sampleSignal, secondSignal]];
+    [zipSignal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribe zipSignal --->%@", x);
+    }];
+    
+    // -zip: reduce:
+    RACSignal *zipReduceSignal = [RACSignal zip:@[sampleSignal, secondSignal] reduce:^id _Nullable (NSString *str1, NSString *str2){
+        return [NSString stringWithFormat:@"%@ - %@", str1, str2];
+    }];
+    [zipReduceSignal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribe zipReduceSignal --->%@", x);
+    }];
+    
+    // - switchToLatest -- 获取被发送的信号  需要注意completed的时机（源信号和被发送信号都completed时才会执行新信号的completed）
+    RACSignal *sendSignal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            [subscriber sendNext:@"a signal sent by other signal"];
+            [subscriber sendCompleted];
+            return nil;
+        }];
+        [subscriber sendNext:signal];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    RACSignal *latesSignal = [sendSignal switchToLatest];
+    [latesSignal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"switchToLatest-->%@", x);
+    }];
 }
-
 
 @end
