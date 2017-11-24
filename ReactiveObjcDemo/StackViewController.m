@@ -138,7 +138,23 @@
     
     // -reduceEach: 针对元素为RACTulpe的序列
     
-#pragma mark -- 到zip
+#pragma mark -- 到zip -- 补与RACSignal的zip差异
+    
+    
+    RACSequence *scanSequence = [sequence1 scanWithStart:@"*" reduceWithIndex:^id _Nullable(id  _Nullable running, id  _Nullable next, NSUInteger index) {
+        NSString *current = sequence1.array[index];
+        return [next stringByAppendingString:current];
+    }];
+    /** 打印结果：
+     (
+     11,
+     22,
+     33,
+     44,
+     55
+     )
+     */
+    NSLog(@"reduceWithIndex:%@", scanSequence.array);
     
 }
 
