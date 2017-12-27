@@ -262,8 +262,15 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAk-UO-cqd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                                         <state key="normal" title="RACSeqence"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW9-A4-jNi">
+                                                        <rect key="frame" x="0.0" y="270" width="375" height="30"/>
+                                                        <state key="normal" title="获取网络方式（非Reachability）"/>
+                                                        <connections>
+                                                            <action selector="testNetType" destination="bdS-vz-sQG" eventType="touchUpInside" id="rO7-15-i9O"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
